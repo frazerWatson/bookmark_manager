@@ -23,11 +23,12 @@ class BookmarkManager < Sinatra::Base
     redirect to('/links')
   end
 
+  get '/tags/:name' do
+    tag = Tag.first(name: params[:name])
+    @links = tag ? tag.links : []
+    erb :'links/index'
+  end
 
-  #   Link.create(url: params[:url], title: params[:title])
-  #   redirect to('/links')
-  # end
-  
   run! if app_file == $0
 end
 # The directory used as a base for the application. By default, 
