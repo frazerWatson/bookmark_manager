@@ -1,5 +1,7 @@
 # Bookmark Manager
 
+A basic bookmark app, made using Ruby and Sinatra.
+
 ### User Stories
 
     As a User
